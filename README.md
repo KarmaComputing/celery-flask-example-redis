@@ -26,8 +26,10 @@ redis-server
 ```
 
 ## Start Celery
-
+In a new terminal
 ```
+. venv/bin/activate
+
 celery -A main worker --loglevel=info -P threads
 ```
 
