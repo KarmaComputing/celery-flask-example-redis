@@ -1,3 +1,4 @@
 celery==5.1.1
 Flask==2.0.1
 redis==3.5.3
+supervisor==4.2.4

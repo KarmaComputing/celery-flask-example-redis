@@ -7,6 +7,49 @@
 git clone https://github.com/chrisjsimpson/celery-flask-example-redis.git
 ```
 
+
+# Run as one container
+
+To run the entire application in a single container (fat container)
+
+Build:
+```
+podman build -t test .
+```
+or Docker
+```
+docker build -t test .
+```
+
+
+Run:
+
+```
+podman run --rm -p 5000:5000 example
+```
+
+Or docker
+```
+docker run --rm -p 5000:5000 example
+```
+
+Test running OK by visiting http://127.0.0.1:5000
+Then look at container logs, you should see the tasks being added
+/ and completed each time the page loads:
+
+Example logs happy path:
+
+```
+2022-12-21 20:54:59,355 DEBG 'cellery' stderr output:
+[2022-12-21 20:54:59,355: INFO/MainProcess] Task app.add_togeather[37d0c7ce-a157-46f1-9bee-d264bdeb63ac] received
+
+2022-12-21 20:55:04,360 DEBG 'cellery' stderr output:
+[2022-12-21 20:55:04,360: INFO/ForkPoolWorker-8] Task app.add_togeather[37d0c7ce-a157-46f1-9bee-d264bdeb63ac] succeeded in 5.0037442020257s: 10
+
+```
+
+# Manually run each component
+
 ## Start flask
 ```
 python3 -m venv venv
