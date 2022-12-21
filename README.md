@@ -21,8 +21,13 @@ flask run
 https://redis.io/topics/quickstart
 
 ## Start redis
+Use docker or podman to start a quick redis container
 ```
-redis-server
+podman run --rm --network=host redis
+```
+ or
+```
+docker run --rm --network=host redis
 ```
 
 ## Start Celery
