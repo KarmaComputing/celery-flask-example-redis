@@ -7,6 +7,34 @@
 git clone https://github.com/chrisjsimpson/celery-flask-example-redis.git
 ```
 
+
+# Run as one container
+
+To run the entire application in a single container (fat container)
+
+Build:
+```
+podman build -t test .
+```
+or Docker
+```
+docker build -t test .
+```
+
+
+Run:
+
+```
+podman run --rm -p 5000:5000 example
+```
+
+Or docker
+```
+docker run --rm -p 5000:5000 example
+```
+
+# Manually run each component
+
 ## Start flask
 ```
 python3 -m venv venv
